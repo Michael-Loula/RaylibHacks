@@ -13,3 +13,4 @@ if [ ! -f build_lock ] || [ "$HASH" != "$(<build_lock)" ]; then
 	cd ../..
 fi
 clang main.c -framework CoreVideo -framework IOKit -framework Cocoa -framework GLUT -framework OpenGL libraylib.a -o "game"
+clang-format -i *.c *.h
