@@ -13,4 +13,6 @@ if [ ! -f build_lock ] || [ "$HASH" != "$(<build_lock)" ]; then
 	cd ../..
 fi
 clang main.c -framework CoreVideo -framework IOKit -framework Cocoa -framework GLUT -framework OpenGL libraylib.a -o "game"
-clang-format -i *.c *.h
+HEADERS=$(find . -maxdepth 1 -name "*.h")
+SRCS=$(find . -maxdepth 1 -name "*.c")
+clang-format -i $HEADERS $SRCS
