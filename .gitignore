@@ -1,3 +1,4 @@
 raylib/
-libraylib.a
+cJSON/
+*.a
 game
