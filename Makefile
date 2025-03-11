@@ -19,5 +19,7 @@ libcjson.a:
 game: libcjson.a libraylib.a main.c
 	clang main.c -framework CoreVideo -framework IOKit -framework Cocoa -framework GLUT -framework OpenGL libcjson.a libraylib.a -o "game"
 
+fmt:
+	clang-format -i $$(find . -maxdepth 1 -type f \( -name "*.h" -or -name "*.c" \))
 clean:
 	rm -rf *.a game cJSON raylib
